@@ -20,16 +20,18 @@ from astrbot.api.star import Context, Star, register
 from astrbot.core.star.star_tools import StarTools
 
 
-@register("astrbot_plugin_dafeiyu_alias", "dafeiyu", "QQ 称呼映射", "1.0.0")
+@register("astrbot_plugin_dafeiyu_alias", "dafeiyu", "QQ 称呼映射", "1.1.1")
 class QQAliasPlugin(Star):
     def __init__(self, context: Context, config: AstrBotConfig | dict | None = None):
         super().__init__(context)
         self.conf = config or {}
         self.enabled = bool(self.conf.get("enabled", True))
-        raw_owners = self.conf.get("owner_ids") or "2690486046"
+        raw_owners = self.conf.get("owner_ids") or ""
         if isinstance(raw_owners, str):
             raw_owners = re.split(r"[,;\s]+", raw_owners)
         self.owner_ids = [str(x).strip() for x in raw_owners if str(x).strip()]
+        if not self.owner_ids:
+            logger.warning("[alias] 未配置 owner_ids，称呼设置/删除命令不可用")
         try:
             self.max_prompt = int(self.conf.get("max_prompt_aliases", 30))
         except Exception:

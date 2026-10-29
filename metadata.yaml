@@ -14,7 +14,7 @@ desc: |
   - 支持自然语言：一次多个 QQ 时调用 `set_aliases` 批量工具
   - 仅主人可设置，纯本地 JSON，不调用 LLM
 
-version: 1.1.0
+version: 1.1.1
 author: dafeiyu
 repo: https://github.com/MyronYoung/astrbot_plugin_dafeiyu_alias
 astrbot_version: ">=4.5.0"
