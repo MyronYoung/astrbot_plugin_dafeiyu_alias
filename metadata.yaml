@@ -1,0 +1,28 @@
+name: astrbot_plugin_dafeiyu_alias
+display_name: QQ 称呼映射
+short_desc: 用 QQ 号固定群友称呼，同号新称呼覆盖，群聊自动按称呼表叫人
+desc: |
+  把 QQ 号和固定称呼绑定，群聊里持续按称呼表称呼人；同一个 QQ 再次设置新称呼时自动覆盖旧称呼。
+
+  适合熟人小群：主人告诉机器人“QQ 123456 是张哥，哥哥”，之后在群里就用“张哥”称呼；换称呼时再说一次即可。
+
+  特性：
+  - QQ 号 → 称呼（可带关系备注）持久保存
+  - 同一 QQ 新称呼覆盖旧称呼
+  - 每次对话自动注入称呼表和当前发送者称呼
+  - 支持 `/称呼`、`/称呼批量`、`/称呼列表`、`/称呼删除`
+  - 支持自然语言：一次多个 QQ 时调用 `set_aliases` 批量工具
+  - 仅主人可设置，纯本地 JSON，不调用 LLM
+
+version: 1.1.0
+author: dafeiyu
+repo: https://github.com/MyronYoung/astrbot_plugin_dafeiyu_alias
+astrbot_version: ">=4.5.0"
+support_platforms:
+  - aiocqhttp
+tags:
+  - QQ
+  - 称呼
+  - 群友
+  - 别名
+  - 记忆

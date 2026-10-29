@@ -1,0 +1,17 @@
+{
+  "enabled": {
+    "description": "启用称呼映射",
+    "type": "bool",
+    "default": true
+  },
+  "owner_ids": {
+    "description": "允许设置称呼的QQ，逗号分隔",
+    "type": "string",
+    "default": "2690486046"
+  },
+  "max_prompt_aliases": {
+    "description": "注入提示词的最大称呼数量",
+    "type": "int",
+    "default": 30
+  }
+}
